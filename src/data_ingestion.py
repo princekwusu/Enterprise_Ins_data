@@ -49,7 +49,7 @@ host = 'localhost'  # Assuming PostgreSQL is running on localhost
 port = '5432'       # Default PostgreSQL port
 
 # Excel file path and table name
-excel_file_path = 'D:\INNGEN_NSS\Data Engineering\Trestle Training\Assignments\Projects\Enterprise_Ins_data\output_file.xlsx'
+excel_file_path = 'D:\INNGEN_NSS\Data Engineering\Trestle Training\Assignments\Projects\Enterprise_Ins_data\enterprise_data\ent_gen_data.xlsx'
 table_name = 'customer'
 
 # Read data from Excel file into a pandas DataFrame
