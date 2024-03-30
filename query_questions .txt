@@ -1,0 +1,21 @@
+QUERY QUESTIONS 
+1. Find the average age of customers who have made transactions.
+2. Rank customers based on the total transaction amount they've made.
+3. Create a CTE that lists customers along with the count of transactions they've made.
+4. List all combinations of customer names and product category preferences.
+5. Find customers who share the same address.
+6. Calculate the total transaction amount for each transaction type.
+7. Transform the data to show transaction counts for each transaction type as columns.
+8. Calculate the cumulative sum of transaction amounts for each customer.
+9. List customers who have made transactions.
+10. List customers who have not provided an email address.
+11. Retrieve customer names along with their email addresses. If an email address is not provided, display 'N/A'.
+12. Categorize customers into age groups (e.g., 'Young', 'Middle-aged', 'Senior').
+13. Retrieve the latest transaction for each customer.
+14. Aggregate all product category preferences into an array for each customer.
+15. Convert the preferences table into JSON format.
+16. Find customers whose addresses contain the word 'Street'.
+17. Find customers whose email addresses follow a specific pattern.
+18. Assign a unique row number to each transaction, ordered by transaction date.
+19. Find customers who have specified multiple product category preferences.
+20. List customers who have made more transactions than the average number of transactions per customer.

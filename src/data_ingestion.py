@@ -55,7 +55,7 @@ port = '5432'       # Default PostgreSQL port
 excel_file_paths = [
     ('enterprise_data/transactions.xlsx', 'transactions'),
     ('enterprise_data/customer_preferences.xlsx', 'preferences'),
-    ('enterprise_data\customer_demographics.xlsx', 'demographics')
+    ('enterprise_data/customer_demographics.xlsx', 'demographics')
 ]
 
 # Connect to the database
