@@ -18,7 +18,8 @@ def connect_to_database(dbname, user, password, host, port):
         print("Error connecting to the database:", e)
         return None
 
-# Function to ingest data from DataFrame into the database
+
+
 # Function to ingest data from DataFrame into the database
 def ingest_data(conn, df, table_name):
     try:
@@ -35,10 +36,11 @@ def ingest_data(conn, df, table_name):
             except Exception as e:
                 print(f"Error inserting row {idx+1}: {e}")
         conn.commit()
-        print("Data ingestion completed successfully")
+        print(f"Data ingestion into table '{table_name}' completed successfully")
     except psycopg2.Error as e:
         conn.rollback()
         print("Error ingesting data:", e)
+
 
 
 # Database connection parameters
@@ -48,19 +50,28 @@ password = 'enterprise_passwd'
 host = 'localhost'  # Assuming PostgreSQL is running on localhost
 port = '5432'       # Default PostgreSQL port
 
-# Excel file path and table name
-excel_file_path = 'D:\INNGEN_NSS\Data Engineering\Trestle Training\Assignments\Projects\Enterprise_Ins_data\enterprise_data\ent_gen_data.xlsx'
-table_name = 'customer'
 
-# Read data from Excel file into a pandas DataFrame
-df = pd.read_excel(excel_file_path)
+# Define Excel file paths and corresponding table names
+excel_file_paths = [
+    ('enterprise_data/transactions.xlsx', 'transactions'),
+    ('enterprise_data/customer_preferences.xlsx', 'preferences'),
+    ('enterprise_data\customer_demographics.xlsx', 'demographics')
+]
 
 # Connect to the database
 conn = connect_to_database(dbname, user, password, host, port)
 
-# Ingest data from DataFrame into the database
+# Iterate over each Excel file and ingest data into corresponding tables
 if conn:
-    ingest_data(conn, df, table_name)
+    for file_path, table_name in excel_file_paths:
+        # Read data from Excel file into a pandas DataFrame
+        df = pd.read_excel(file_path)
+        
+        # Ingest data from DataFrame into the database
+        ingest_data(conn, df, table_name)
+        
     conn.close()
 else:
     print("Failed to connect to the database")
+
+print("Data import completed.")
