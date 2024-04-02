@@ -5,10 +5,7 @@
 ## Requirements:
 * docker >= 17.12.0+
 * docker-compose
-  #Python3
-  *pandas
-  *psycopg2
-  *faker
+* Python3(pandas,psycopg2,faker)
 
 ## Guide
 * Clone or download this repository
