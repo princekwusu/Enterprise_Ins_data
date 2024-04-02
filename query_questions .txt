@@ -2,7 +2,6 @@ QUERY QUESTIONS
 1. Find the average age of customers who have made transactions.
 2. Rank customers based on the total transaction amount they've made.
 3. Create a CTE that lists customers along with the count of transactions they've made.
-4. List all combinations of customer names and product category preferences.
 5. Find customers who share the same address.
 6. Calculate the total transaction amount for each transaction type.
 7. Transform the data to show transaction counts for each transaction type as columns.

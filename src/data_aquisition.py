@@ -1,11 +1,13 @@
+# importing neccessary libraries
 from faker import Faker
 import random
 import csv
 import uuid
 
+# Creating a faker instance
 fake = Faker()
 
-# Function to generate random customer demographics for a specific custome
+# Function to generate random customer demographics data
 def generate_customer_demographics( num_customers,id_lenght,phone_number_length):
     customers = []
     for _ in range(num_customers):
@@ -20,7 +22,7 @@ def generate_customer_demographics( num_customers,id_lenght,phone_number_length)
     return customers
 
 
-# Function to generate random transaction data for a specific customer
+# Function to generate random transaction data 
 def generate_transactions( num_transactions):
     transactions = []
     for _ in range(num_transactions):
@@ -33,7 +35,7 @@ def generate_transactions( num_transactions):
 r
 
 
-# Function to generate random customer preferences for a specific customer
+# Function to generate random customer preferences data
 def generate_customer_preferences(num_customers):
     customers = []
     for _ in range(num_customers):
@@ -53,7 +55,7 @@ transactions_data = generate_transactions(number_of_records)
 customer_demographics_data = generate_customer_demographics(number_of_records,id_lenght,phone_number_length)
 customer_preferences_data = generate_customer_preferences(number_of_records)
 
-# Saving data to CSV files (optional)
+# Function to save data to CSV files 
 def save_to_csv(data, filename, header):
     with open(filename, mode='w', newline='') as file:
         writer = csv.writer(file)

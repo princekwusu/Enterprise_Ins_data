@@ -20,9 +20,7 @@ FROM demographics d
 LEFT JOIN TransactionCounts tc ON d.customer_id = tc.customer_id;
 
 
---4 .List all combinations of customer names and product category preferences
-SELECT d.first_name,d.last_name, p.product_category_preferences
-FROM demographics d, preferences p;
+
 
 
 --5. Find customers who share the same address.

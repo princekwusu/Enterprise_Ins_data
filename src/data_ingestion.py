@@ -1,3 +1,4 @@
+#Importing the neccesay libraries
 import pandas as pd
 import psycopg2
 from psycopg2 import sql
@@ -20,7 +21,7 @@ def connect_to_database(dbname, user, password, host, port):
 
 
 
-# Function to ingest data from DataFrame into the database
+# Function to ingest generated data into the database
 def ingest_data(conn, df, table_name):
     try:
         cursor = conn.cursor()
@@ -47,8 +48,8 @@ def ingest_data(conn, df, table_name):
 dbname = 'enterprise'
 user = 'enterprise'
 password = 'enterprise_passwd'
-host = 'localhost'  # Assuming PostgreSQL is running on localhost
-port = '5432'       # Default PostgreSQL port
+host = 'localhost'  
+port = '5432'       
 
 
 # Define Excel file paths and corresponding table names
@@ -67,7 +68,7 @@ if conn:
         # Read data from Excel file into a pandas DataFrame
         df = pd.read_excel(file_path)
         
-        # Ingest data from DataFrame into the database
+        # Ingest generated data  into the database
         ingest_data(conn, df, table_name)
         
     conn.close()

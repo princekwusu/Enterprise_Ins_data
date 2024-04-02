@@ -1,7 +1,9 @@
+--Type creation
 CREATE TYPE gender_enum AS ENUM ('Male', 'Female', 'others');
 CREATE TYPE contact_method_enum AS ENUM ('Phone', 'SMS', 'Email');
 CREATE TYPE transaction_type_enum AS ENUM ('credit', 'debit');
 
+--defining demographics table
 CREATE TABLE demographics (
     customer_id VARCHAR(6),
     customer_name VARCHAR(255),
@@ -12,14 +14,14 @@ CREATE TABLE demographics (
     phone_number VARCHAR(30)
 );
 
-
+--defining preferences table
 CREATE TABLE preferences (
     preferred_contact_method contact_method_enum,
     product_category_preferences VARCHAR(100) 
 );
 
 
-
+--defining transaction table
 CREATE TABLE transactions (
     TransactionDate TIMESTAMP,
     Amount NUMERIC(10, 2),
@@ -33,7 +35,7 @@ select * from preferences;
 select * from transactions;
 select * from demographics;
 
-
+--setting customer_id as pk in demographics table
 ALTER TABLE demographics
 ADD PRIMARY KEY (Customer_id);
 
@@ -53,7 +55,7 @@ DROP COLUMN Customer_Name;
 ---####################
 
 
-
+#Editing column
 ALTER TABLE demographics
 ALTER COLUMN phone_number SET DATA TYPE VARCHAR(15) ;
 
