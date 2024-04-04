@@ -32,7 +32,7 @@ def generate_transactions( num_transactions):
         transactions.append((transaction_date, amount, transaction_type))
     return transactions
 
-r
+
 
 
 # Function to generate random customer preferences data
